@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2</title>
+
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+    <script src="https://use.typekit.net/dcf1ame.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link href="https://fonts.googleapis.com/css?family=Kirang+Haerang|Poiret+One|Rock+Salt|Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+body { margin:0; width: 100%; background: black;}
+
+#face {width: 170px; position: relative; float: left; margin: 0px 50px;}
+
+#category {width: 120px; position: relative; float: left; margin: 30px 30px;}
+
+#drag{width: 300px; position: absolute; top: -50px; left: -50px;}
+
+#geul2 {position: absolute; top: 380px; left: 630px; width: 450px;}
+
+</style>
+</head>
+
+<body>
+	<img src="./last/category.png" id="face" style=" float: left; width: 120px; margin: 30px 20px;">
+	<img src="./last/category.png" id="face" style=" float: left; width: 120px; margin: 30px 20px;">
+	<div id="face" style=" float: left; width: 1000px; height: 200px;"></div>
+	<img src="./last/category.png" id="face" style=" float: left; width: 120px; margin: 30px 20px;">
+	<img src="./last/category.png" id="face" style=" float: left; width: 120px; margin: 30px 20px;">
+
+	<img src="./last/geul2.png" style="width: 340px; position: absolute; left: 0px; top :500px;">
+
+	<div class="drag"><img src="./last/face1.png" id="drag" style="position: absolute; top: 20px; left: 700px;"></div>
+	<div class="drag"><img src="./last/face2.png" id="drag" style="position: absolute; top: 220px; left: 1100px;"></div>
+	<div class="drag"><img src="./last/face3.png" id="drag" style="position: absolute; top: 380px; left: 900px;"></div>
+
+	<script type="text/javascript">
+	(function(){
+		var d = false;
+		var target,dx,dy;
+		var t = document.getElementsByClassName("drag");
+		for(var i=0; i<t.length; i++){
+			t[i].style.display = "block";
+			t[i].style.position = "absolute";
+			t[i].style.cursor = "pointer";
+			t[i].ondragstart = function(e){e.preventDefault();};
+			t[i].onmousedown = function(e){ d = true; dx = e.offsetX; dy = e.offsetY; target = e.target;}
+			t[i].onmouseup = function(){ d = false;}
+			window.onmousemove = function(e){ 
+				if(d){ target.style.left = (e.clientX - dx) + "px";
+					target.style.top = (e.clientY - dy) + "px";}
+			}
+		}
+	})();
+	</script>
+</body>
+</html>
