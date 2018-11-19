@@ -16,28 +16,47 @@
 body { margin:0; width: 100%; background: black;}
 
 #face {width: 170px; position: relative; float: left; margin: 0px 50px;}
+#category1 {width: 170px; position: relative; float: left; margin: 0px 50px;}
+#category2 {width: 170px; position: relative; float: left; margin: 0px 50px;}
+#category3 {width: 170px; position: relative; float: left; margin: 0px 50px;}
+#category4 {width: 170px; position: relative; float: left; margin: 0px 50px;}
 
-#category {width: 120px; position: relative; float: left; margin: 30px 30px;}
+#park {width: 560px; position: relative; float: right; margin-top: -160px; margin-right: 250px;}
 
-#drag{width: 300px; position: absolute; top: -50px; left: -50px;}
+/*#category {width: 120px; position: relative; float: left; margin: 30px 30px;}*/
+
+#drag{width: 370px; position: absolute; top: -50px; left: -50px; opacity: 1;}
+#drag:hover{opacity: 0.7;}
 
 #geul2 {position: absolute; top: 380px; left: 630px; width: 450px;}
+
+#float {position: relative; float: left;}
+
+
+#popup {position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; width: 20%; margin: 30% auto; background: white; display: none;}
+#popup img{width: 20%; background: white; display: none;}
+
+#popupgeul {position: absolute; top:30px; left:0px; bottom: 0px; right: 0px; width: 20%; margin: 30% auto; display: none; color: white; background: red;}
 
 </style>
 </head>
 
 <body>
-	<img src="./last/category.png" id="face" style=" float: left; width: 120px; margin: 30px 20px;">
-	<img src="./last/category.png" id="face" style=" float: left; width: 120px; margin: 30px 20px;">
+	
+	<img src="./last/category2.png" style=" position: absolute; left: 20px; top: 30px; width: 120px; display: none;">
+	<img src="./last/category.png" id="category1" style=" float: left; width: 120px; margin: 20px 20px;">
+	<img src="./last/category.png" id="category2" style=" float: left; width: 120px; margin: 20px 20px;">
 	<div id="face" style=" float: left; width: 1000px; height: 200px;"></div>
-	<img src="./last/category.png" id="face" style=" float: left; width: 120px; margin: 30px 20px;">
-	<img src="./last/category.png" id="face" style=" float: left; width: 120px; margin: 30px 20px;">
+	<img src="./last/category.png" id="category3" style=" float: left; width: 120px; margin: 20px 20px;">
+	<img src="./last/category.png" id="category4" style=" float: left; width: 120px; margin: 20px 20px;">
 
 	<img src="./last/geul2.png" style="width: 340px; position: absolute; left: 0px; top :500px;">
 
+	<img src="./last/park.png" id="park">
+
 	<div class="drag"><img src="./last/face1.png" id="drag" style="position: absolute; top: 20px; left: 700px;"></div>
-	<div class="drag"><img src="./last/face2.png" id="drag" style="position: absolute; top: 220px; left: 1100px;"></div>
 	<div class="drag"><img src="./last/face3.png" id="drag" style="position: absolute; top: 380px; left: 900px;"></div>
+	<div class="drag"><img src="./last/face2.png" id="drag" style="position: absolute; top: 220px; left: 1100px;"></div>
 
 	<script type="text/javascript">
 	(function(){
@@ -57,6 +76,88 @@ body { margin:0; width: 100%; background: black;}
 			}
 		}
 	})();
+
+	//카테고리 온클릭이벤트
+	var toggle = "off"
+
+		category1.onclick = function(){
+			if(toggle == "off"){
+				category1.setAttribute("src","./last/category2.png");
+
+				toggle = "on"
+                /*category1.style.display = "none";
+                category2.style.display = "inline";*/
+                popup.style.display = "inline";
+                popupgeul.style.display = "inline";
+
+			} else if (toggle = "on") {
+				category1.setAttribute("src","./last/category.png");				
+                toggle ="off";
+               /*category2.style.display = "inline";
+               category1.style.display = "none";*/
+               popup.style.display = "none";
+                popupgeul.style.display = "none";
+            } 
+		}
+
+		var toggle = "off"
+
+		category4.onclick = function(){
+			if(toggle == "off"){
+				category4.setAttribute("src","./last/category2.png");
+
+				toggle = "on"
+			} else if (toggle = "on") {
+				category4.setAttribute("src","./last/category.png");				
+                toggle ="off";
+            } 
+		}
+
+		var toggle = "off"
+
+		category2.onclick = function(){
+			if(toggle == "off"){
+				category2.setAttribute("src","./last/category2.png");
+
+				toggle = "on"
+			} else if (toggle = "on") {
+				category2.setAttribute("src","./last/category.png");				
+                toggle ="off";
+            } 
+		}
+
+		var toggle = "off"
+
+		category3.onclick = function(){
+			if(toggle == "off"){
+				category3.setAttribute("src","./last/category2.png");
+
+				toggle = "on"
+			} else if (toggle = "on") {
+				category3.setAttribute("src","./last/category.png");				
+                toggle ="off";
+            } 
+		}
+
+		var toggle = "off"
+
+		category4.onclick = function(){
+			if(toggle == "off"){
+				category4.setAttribute("src","./last/category2.png");
+
+				toggle = "on"
+			} else if (toggle = "on") {
+				category4.setAttribute("src","./last/category.png");				
+                toggle ="off";
+            } 
+		}
 	</script>
+
+	<div id="popup">
+		<div id="popupgeul " style="background: white;">
+			<img src="./last/popup.png" id="">fpfhffpfhf
+		</div>
+	</div>
+
 </body>
 </html>
