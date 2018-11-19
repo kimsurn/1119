@@ -21,9 +21,12 @@ body { margin:0; width: 100%; background: black;}
 #category3 {width: 170px; position: relative; float: left; margin: 0px 50px;}
 #category4 {width: 170px; position: relative; float: left; margin: 0px 50px;}
 
+#park {width: 560px; position: relative; float: right; margin-top: -160px; margin-right: 250px;}
+
 /*#category {width: 120px; position: relative; float: left; margin: 30px 30px;}*/
 
-#drag{width: 300px; position: absolute; top: -50px; left: -50px;}
+#drag{width: 370px; position: absolute; top: -50px; left: -50px; opacity: 1;}
+#drag:hover{opacity: 0.7;}
 
 #geul2 {position: absolute; top: 380px; left: 630px; width: 450px;}
 
@@ -49,9 +52,11 @@ body { margin:0; width: 100%; background: black;}
 
 	<img src="./last/geul2.png" style="width: 340px; position: absolute; left: 0px; top :500px;">
 
+	<img src="./last/park.png" id="park">
+
 	<div class="drag"><img src="./last/face1.png" id="drag" style="position: absolute; top: 20px; left: 700px;"></div>
-	<div class="drag"><img src="./last/face2.png" id="drag" style="position: absolute; top: 220px; left: 1100px;"></div>
 	<div class="drag"><img src="./last/face3.png" id="drag" style="position: absolute; top: 380px; left: 900px;"></div>
+	<div class="drag"><img src="./last/face2.png" id="drag" style="position: absolute; top: 220px; left: 1100px;"></div>
 
 	<script type="text/javascript">
 	(function(){
